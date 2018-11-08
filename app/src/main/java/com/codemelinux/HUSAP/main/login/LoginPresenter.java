@@ -21,7 +21,6 @@ import com.codemelinux.HUSAP.utils.LogUtil;
 import com.codemelinux.HUSAP.utils.PreferencesUtil;
 import com.google.android.gms.tasks.Task;
 
-
 class LoginPresenter extends BasePresenter<LoginView> {
 
     LoginPresenter(Context context) {

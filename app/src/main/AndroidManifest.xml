@@ -23,7 +23,7 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".main.main.NavControl"
+            android:name=".Splash"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppCompat.NoActionBar">
             <intent-filter>
@@ -107,6 +107,8 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".main.main.NavControl"
+            android:theme="@style/AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>
