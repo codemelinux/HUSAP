@@ -198,5 +198,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Paypal Payment -->
+    <string-array name="amountSpinner">
+        <item>$10 (Normal Optimization)</item>
+        <item>$25 (Premium Optimization)</item>
+    </string-array>
+
 
 </resources>
