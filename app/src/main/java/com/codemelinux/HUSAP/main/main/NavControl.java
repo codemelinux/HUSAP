@@ -35,6 +35,8 @@ import com.codemelinux.HUSAP.main.postDetails.PostDetailsActivity;
 import com.codemelinux.HUSAP.main.profile.ProfileActivity;
 import com.codemelinux.HUSAP.main.search.SearchActivity;
 import com.codemelinux.HUSAP.model.Post;
+import com.codemelinux.HUSAP.myChat.ChatLogin;
+import com.codemelinux.HUSAP.myChat.ChatMainActivity;
 import com.codemelinux.HUSAP.utils.AnimationUtils;
 import com.codemelinux.HUSAP.utils.LogoutHelper;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -100,6 +102,11 @@ public class NavControl extends BaseActivity<MainView, MainPresenter>
         } else if (id == R.id.nav_search) {
             Intent searchIntent = new Intent(this, SearchActivity.class);
             startActivity(searchIntent);
+
+        } else if (id == R.id.nav_chat){
+
+            Intent followingPosts = new Intent(this, ChatLogin.class);
+            startActivity(followingPosts);
 
         } else if (id == R.id.nav_followers) {
             Intent followingPosts = new Intent(this, FollowingPostsActivity.class);

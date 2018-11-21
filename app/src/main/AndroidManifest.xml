@@ -109,6 +109,27 @@
 
         <activity android:name=".main.main.NavControl"
             android:theme="@style/AppCompat.NoActionBar"></activity>
+
+
+        <activity android:name=".myChat.ChatLogin" />
+        <activity android:name=".myChat.ChatMainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.main.NavControl" />
+        </activity>
+        <activity android:name=".myChat.RegisterActivity" />
+        <activity
+            android:name=".myChat.SettingsActivity"
+            android:parentActivityName=".myChat.ChatMainActivity" />
+        <activity android:name=".myChat.GroupChatActivity" />
+        <activity android:name=".myChat.PhoneLoginActivity" />
+        <activity
+            android:name=".myChat.FindFriendsActivity"
+            android:parentActivityName=".myChat.ChatMainActivity" />
+        <activity android:name=".myChat.ProfileActivity" />
+        <activity
+            android:name=".myChat.ChatActivity"
+            android:parentActivityName=".myChat.ChatMainActivity" />
     </application>
 
 </manifest>

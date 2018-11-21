@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#C0392B</color>
+    <color name="colorPrimary">#C0392B</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
     <color name="primary_dark">#B71C1C</color>
     <color name="primary_light">#D7CCC8</color>
     <color name="dart_transparent">#81000000</color>
