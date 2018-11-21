@@ -203,7 +203,7 @@ public class SettingsActivity extends AppCompatActivity {
                 profileMap.put("uid", currentUserID);
                 profileMap.put("name", setUserName);
                 profileMap.put("status", setStatus);
-                profileMap.put("images", UserProfileImage);
+             //   profileMap.put("images", UserProfileImage);
 
 
             RootRef.child("Users").child(currentUserID).setValue(profileMap)

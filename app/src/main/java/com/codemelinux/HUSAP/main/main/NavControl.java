@@ -104,9 +104,8 @@ public class NavControl extends BaseActivity<MainView, MainPresenter>
             startActivity(searchIntent);
 
         } else if (id == R.id.nav_chat){
-
-            Intent followingPosts = new Intent(this, ChatLogin.class);
-            startActivity(followingPosts);
+            Intent chat = new Intent(this, ChatMainActivity.class);
+            startActivity(chat);
 
         } else if (id == R.id.nav_followers) {
             Intent followingPosts = new Intent(this, FollowingPostsActivity.class);
