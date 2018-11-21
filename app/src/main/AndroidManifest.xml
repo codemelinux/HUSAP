@@ -112,6 +112,7 @@
 
 
         <activity android:name=".myChat.ChatLogin" />
+
         <activity android:name=".myChat.ChatMainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -127,14 +128,18 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".myChat.ChatMainActivity" />
 
-        <activity android:name=".myChat.GroupChatActivity" />
+        <activity android:name=".myChat.GroupChatActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity android:name=".myChat.PhoneLoginActivity" />
         <activity
             android:name=".myChat.FindFriendsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".myChat.ChatMainActivity" />
         <activity android:name=".myChat.ProfileActivity" />
         <activity
             android:name=".myChat.ChatActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".myChat.ChatMainActivity" />
     </application>
 
