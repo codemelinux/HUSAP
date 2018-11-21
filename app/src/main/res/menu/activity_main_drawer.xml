@@ -23,14 +23,22 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile_black_24dp"
             android:title="Profile" />
+
         <item
             android:id="@+id/nav_followers"
             android:icon="@drawable/ic_followers_black_24dp"
             android:title="Followers Post" />
+
+        <item
+            android:id="@+id/nav_paypal"
+            android:icon="@drawable/ic_followers_black_24dp"
+            android:title="Pay To Optimize" />
+
         <item
             android:id="@+id/nav_exit"
             android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:title="Exit" />
+
     </group>
 
 

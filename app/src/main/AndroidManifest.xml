@@ -141,6 +141,16 @@
             android:name=".myChat.ChatActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".myChat.ChatMainActivity" />
+
+        <activity
+            android:name=".paypal.Payment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".myChat.ChatMainActivity" />
+
+        <activity
+            android:name=".paypal.PaymentDetails"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".myChat.ChatMainActivity" />
     </application>
 
 </manifest>
