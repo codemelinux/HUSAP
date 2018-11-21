@@ -62,6 +62,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         userName.setVisibility(View.INVISIBLE);
 
+        RetrieveUserInfo();
+
         UpdateAccountSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        RetrieveUserInfo();
+
 
         UserProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,6 +192,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void UpdateSettings() {
         String setUserName = userName.getText().toString();
         String setStatus = userStatus.getText().toString();
+       // String setImage = String.valueOf(UserProfileImage);
         
         if (TextUtils.isEmpty(setUserName)){
             Toast.makeText(this, "Please Enter Username", Toast.LENGTH_SHORT).show();
@@ -203,7 +206,7 @@ public class SettingsActivity extends AppCompatActivity {
                 profileMap.put("uid", currentUserID);
                 profileMap.put("name", setUserName);
                 profileMap.put("status", setStatus);
-                profileMap.put("images", UserProfileImage);
+             //   profileMap.put("image", setImage);
 
 
             RootRef.child("Users").child(currentUserID).setValue(profileMap)
