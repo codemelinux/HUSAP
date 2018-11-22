@@ -6,25 +6,32 @@
     android:layout_height="match_parent"
     tools:context="com.codemelinux.HUSAP.paypal.Payment">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <Spinner
-            android:id="@+id/amountSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout">
 
-        <Button
-            android:id="@+id/btnPayNow"
-            android:text="Pay Now"
-            android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:background="@color/colorPrimary"
-            android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/amountSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnPayNow"
+                android:text="Pay Now"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
@@ -34,9 +41,10 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-5363668297945696/3328008405"></com.google.android.gms.ads.AdView>
-    </LinearLayout>
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
