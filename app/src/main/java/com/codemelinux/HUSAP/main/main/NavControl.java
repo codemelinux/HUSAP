@@ -42,6 +42,8 @@ import com.codemelinux.HUSAP.utils.AnimationUtils;
 import com.codemelinux.HUSAP.utils.LogoutHelper;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import com.google.android.gms.ads.MobileAds;
+
 public class NavControl extends BaseActivity<MainView, MainPresenter>
         implements NavigationView.OnNavigationItemSelectedListener, MainView {
 
@@ -75,6 +77,9 @@ public class NavControl extends BaseActivity<MainView, MainPresenter>
         navigationView.setNavigationItemSelectedListener(this);
 
         initContentView();
+
+        MobileAds.initialize(this, "ca-app-pub-5363668297945696~9775116810");
+
     }
 
   /*  @Override

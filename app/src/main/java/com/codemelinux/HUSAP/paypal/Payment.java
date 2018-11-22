@@ -23,6 +23,9 @@ import org.json.JSONException;
 
 import java.math.BigDecimal;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class Payment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static final int PAYPAL_REQUEST_CODE = 7171;
@@ -33,6 +36,9 @@ public class Payment extends AppCompatActivity implements AdapterView.OnItemSele
     Button btnPayNow;
 
     String amount = "10";
+
+    private AdView mAdView;
+
 
     @Override
     protected void onDestroy() {
@@ -65,6 +71,11 @@ public class Payment extends AppCompatActivity implements AdapterView.OnItemSele
                 processPayment();
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
     private void processPayment() {

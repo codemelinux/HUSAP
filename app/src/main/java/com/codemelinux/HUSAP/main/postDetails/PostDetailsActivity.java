@@ -163,6 +163,7 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
 
         presenter.loadPost(postId);
         supportPostponeEnterTransition();
+
     }
 
     @Override

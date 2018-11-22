@@ -96,6 +96,10 @@
             android:name="io.fabric.ApiKey"
             android:value="84e05e27c9fcba7e1de6a47e355a1aa247264a46" />
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5363668297945696~9775116810"/>
+
         <service android:name=".services.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
