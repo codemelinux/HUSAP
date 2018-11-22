@@ -12,7 +12,17 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.codemelinux.HUSAP.R;
+import com.codemelinux.HUSAP.main.login.LoginActivity;
+import com.codemelinux.HUSAP.myChat.ChatMainActivity;
+import com.codemelinux.HUSAP.myChat.ProfileActivity;
 import com.codemelinux.HUSAP.paypal.Config;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
@@ -28,6 +38,10 @@ import com.google.android.gms.ads.AdView;
 
 public class Payment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+    private DatabaseReference RootRef;
+
     public static final int PAYPAL_REQUEST_CODE = 7171;
     private static PayPalConfiguration config = new PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
@@ -38,6 +52,8 @@ public class Payment extends AppCompatActivity implements AdapterView.OnItemSele
     String amount = "10";
 
     private AdView mAdView;
+
+
 
 
     @Override
@@ -51,6 +67,11 @@ public class Payment extends AppCompatActivity implements AdapterView.OnItemSele
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        ///// handles authentication for login
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+        RootRef = FirebaseDatabase.getInstance().getReference();
 
         //start paypal service
         Intent intent = new Intent(this, PayPalService.class);
@@ -76,6 +97,42 @@ public class Payment extends AppCompatActivity implements AdapterView.OnItemSele
         AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         mAdView.loadAd(adRequest);
 
+    }
+
+    ///// Use this section for the login
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (currentUser == null){
+            Intent loginIntent = new Intent(Payment.this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+        }
+        else {
+            VerifyUserExistance();
+        }
+    }
+
+    private void VerifyUserExistance() {
+        String currentUserID = mAuth.getCurrentUser().getUid();
+
+        RootRef.child("profiles").child(currentUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if ((dataSnapshot.child("username").exists())){
+                    Toast.makeText(Payment.this, "Welcome", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //SendUserToSettingsActivity();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void processPayment() {
