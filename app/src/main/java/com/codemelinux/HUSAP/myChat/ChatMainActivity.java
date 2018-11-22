@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.codemelinux.HUSAP.R;
+import com.codemelinux.HUSAP.main.login.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,10 +82,10 @@ public class ChatMainActivity extends AppCompatActivity {
     private void VerifyUserExistance() {
         String currentUserID = mAuth.getCurrentUser().getUid();
 
-        RootRef.child("Users").child(currentUserID).addValueEventListener(new ValueEventListener() {
+        RootRef.child("profiles").child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if ((dataSnapshot.child("name").exists())){
+                if ((dataSnapshot.child("username").exists())){
                     Toast.makeText(ChatMainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -181,8 +182,8 @@ public class ChatMainActivity extends AppCompatActivity {
     }
 
     private void SendUserToLoginActivity() {
-        Intent loginIntent = new Intent(ChatMainActivity.this, ChatLogin.class);
-        loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Intent loginIntent = new Intent(ChatMainActivity.this, LoginActivity.class);
+        //loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(loginIntent);
         finish();
     }
