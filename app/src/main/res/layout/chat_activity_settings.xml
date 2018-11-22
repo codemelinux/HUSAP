@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/set_user_name"
         android:inputType="textMultiLine"
-        android:hint="online"
+        android:hint="status"
         android:textAlignment="center"
         android:drawableStart="@drawable/edit_status"
         android:textColor="@color/colorPrimaryDark"
