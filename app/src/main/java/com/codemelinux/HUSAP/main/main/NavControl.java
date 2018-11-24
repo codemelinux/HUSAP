@@ -42,6 +42,8 @@ import com.codemelinux.HUSAP.utils.AnimationUtils;
 import com.codemelinux.HUSAP.utils.LogoutHelper;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import com.google.android.gms.ads.MobileAds;
 
 public class NavControl extends BaseActivity<MainView, MainPresenter>
@@ -58,6 +60,8 @@ public class NavControl extends BaseActivity<MainView, MainPresenter>
     private SwipeRefreshLayout swipeContainer;
 
     private FragmentManager mManager = getSupportFragmentManager();
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +81,8 @@ public class NavControl extends BaseActivity<MainView, MainPresenter>
         navigationView.setNavigationItemSelectedListener(this);
 
         initContentView();
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         MobileAds.initialize(this, "ca-app-pub-5363668297945696~9775116810");
 
