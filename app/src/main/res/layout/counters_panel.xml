@@ -81,17 +81,18 @@
         android:id="@+id/dateContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/intrinsic_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingBottom="@dimen/intrinsic_padding"
         android:paddingRight="@dimen/intrinsic_padding"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:paddingTop="@dimen/intrinsic_padding"
+        android:visibility="invisible">
 
         <ImageView
             android:id="@+id/dateImageView"
-            app:srcCompat="@drawable/ic_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_time" />
 
         <TextView
             android:id="@+id/dateTextView"
